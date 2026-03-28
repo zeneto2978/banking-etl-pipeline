@@ -1,0 +1,1003 @@
+[0m13:24:50.423570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1125c6840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113401820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113401340>]}
+
+
+============================== 13:24:50.432482 | 136a9d94-9939-4afc-bb3d-7acfb1f91828 ==============================
+[0m13:24:50.432482 [info ] [MainThread]: Running with dbt=1.11.7
+[0m13:24:50.433315 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'indirect_selection': 'eager', 'quiet': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'introspect': 'True', 'no_print': 'None', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_path': '/Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/logs', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/zeneto/.dbt', 'cache_selected_only': 'False', 'log_format': 'default', 'static_parser': 'True', 'debug': 'False'}
+[0m13:24:50.457925 [info ] [MainThread]: dbt version: 1.11.7
+[0m13:24:50.458524 [info ] [MainThread]: python version: 3.12.4
+[0m13:24:50.458980 [info ] [MainThread]: python path: /Users/zeneto/Desktop/banking-etl-pipeline/venv/bin/python3
+[0m13:24:50.459401 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m13:24:50.556672 [info ] [MainThread]: Using profiles dir at /Users/zeneto/.dbt
+[0m13:24:50.557328 [info ] [MainThread]: Using profiles.yml file at /Users/zeneto/.dbt/profiles.yml
+[0m13:24:50.557817 [info ] [MainThread]: Using dbt_project.yml file at /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/dbt_project.yml
+[0m13:24:50.558790 [info ] [MainThread]: adapter type: postgres
+[0m13:24:50.559311 [info ] [MainThread]: adapter version: 1.10.0
+[0m13:24:50.701304 [info ] [MainThread]: Configuration:
+[0m13:24:50.701903 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:24:50.702376 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:24:50.702832 [info ] [MainThread]: Required dependencies:
+[0m13:24:50.703456 [debug] [MainThread]: Executing "git --help"
+[0m13:24:50.725031 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:24:50.727305 [debug] [MainThread]: STDERR: "b''"
+[0m13:24:50.728241 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:24:50.728954 [info ] [MainThread]: Connection:
+[0m13:24:50.729690 [info ] [MainThread]:   host: localhost
+[0m13:24:50.730170 [info ] [MainThread]:   port: 5433
+[0m13:24:50.730606 [info ] [MainThread]:   user: postgres
+[0m13:24:50.731030 [info ] [MainThread]:   database: banking_db
+[0m13:24:50.731434 [info ] [MainThread]:   schema: public
+[0m13:24:50.731930 [info ] [MainThread]:   connect_timeout: 10
+[0m13:24:50.732375 [info ] [MainThread]:   role: None
+[0m13:24:50.732782 [info ] [MainThread]:   search_path: None
+[0m13:24:50.733183 [info ] [MainThread]:   keepalives_idle: 0
+[0m13:24:50.733613 [info ] [MainThread]:   sslmode: None
+[0m13:24:50.734024 [info ] [MainThread]:   sslcert: None
+[0m13:24:50.734433 [info ] [MainThread]:   sslkey: None
+[0m13:24:50.734851 [info ] [MainThread]:   sslrootcert: None
+[0m13:24:50.735252 [info ] [MainThread]:   application_name: dbt
+[0m13:24:50.735650 [info ] [MainThread]:   retries: 1
+[0m13:24:50.736647 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m13:24:50.870065 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m13:24:50.925954 [debug] [MainThread]: Using postgres connection "debug"
+[0m13:24:50.926491 [debug] [MainThread]: On debug: select 1 as id
+[0m13:24:50.926889 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:24:51.026398 [debug] [MainThread]: SQL status: SELECT 1 in 0.099 seconds
+[0m13:24:51.028686 [debug] [MainThread]: On debug: Close
+[0m13:24:51.029337 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:24:51.029998 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:24:51.039077 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.7203079, "process_in_blocks": "0", "process_kernel_time": 0.512969, "process_mem_max_rss": "116432896", "process_out_blocks": "0", "process_user_time": 2.163705}
+[0m13:24:51.039884 [debug] [MainThread]: Command `dbt debug` succeeded at 13:24:51.039739 after 0.72 seconds
+[0m13:24:51.040401 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:24:51.041363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11358bfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11353d0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11353d4f0>]}
+[0m13:24:51.042072 [debug] [MainThread]: Flushing usage events
+[0m13:24:51.403327 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:42.798810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1113d80e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11414de50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11414da30>]}
+
+
+============================== 13:54:42.806874 | d8d33377-4b69-4035-b845-8d99c1351aa5 ==============================
+[0m13:54:42.806874 [info ] [MainThread]: Running with dbt=1.11.7
+[0m13:54:42.808142 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/logs', 'write_json': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'target_path': 'None', 'fail_fast': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'no_print': 'None', 'empty': 'False', 'debug': 'False', 'profiles_dir': '/Users/zeneto/.dbt', 'warn_error': 'None', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run'}
+[0m13:54:43.068422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113a5c920>]}
+[0m13:54:43.149214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11219c5f0>]}
+[0m13:54:43.150618 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m13:54:43.301962 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m13:54:43.303319 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:54:43.303916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11422bda0>]}
+[0m13:54:44.555618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114228a40>]}
+[0m13:54:44.623267 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m13:54:44.626620 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m13:54:44.654194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114f91370>]}
+[0m13:54:44.654819 [info ] [MainThread]: Found 4 models, 464 macros
+[0m13:54:44.655286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1147082f0>]}
+[0m13:54:44.657497 [info ] [MainThread]: 
+[0m13:54:44.657995 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:54:44.658469 [info ] [MainThread]: 
+[0m13:54:44.659145 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:54:44.664400 [debug] [ThreadPool]: Acquiring new postgres connection 'list_banking_db'
+[0m13:54:44.729412 [debug] [ThreadPool]: Using postgres connection "list_banking_db"
+[0m13:54:44.729987 [debug] [ThreadPool]: On list_banking_db: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "list_banking_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:54:44.730395 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:54:44.839417 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.109 seconds
+[0m13:54:44.841728 [debug] [ThreadPool]: On list_banking_db: Close
+[0m13:54:44.843696 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_banking_db, now list_banking_db_public)
+[0m13:54:44.850705 [debug] [ThreadPool]: Using postgres connection "list_banking_db_public"
+[0m13:54:44.851167 [debug] [ThreadPool]: On list_banking_db_public: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "list_banking_db_public"} */
+select
+      'banking_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:54:44.851566 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:44.872749 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.021 seconds
+[0m13:54:44.874682 [debug] [ThreadPool]: On list_banking_db_public: ROLLBACK
+[0m13:54:44.875409 [debug] [ThreadPool]: On list_banking_db_public: Close
+[0m13:54:44.880760 [debug] [MainThread]: Using postgres connection "master"
+[0m13:54:44.881303 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m13:54:44.881757 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:54:44.904185 [debug] [MainThread]: SQL status: SELECT 0 in 0.022 seconds
+[0m13:54:44.906139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115112f30>]}
+[0m13:54:44.906830 [debug] [MainThread]: On master: ROLLBACK
+[0m13:54:44.907626 [debug] [MainThread]: On master: COMMIT
+[0m13:54:44.908221 [debug] [MainThread]: Using postgres connection "master"
+[0m13:54:44.908758 [debug] [MainThread]: On master: COMMIT
+[0m13:54:44.909594 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:54:44.910119 [debug] [MainThread]: On master: Close
+[0m13:54:44.915105 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_accounts
+[0m13:54:44.915873 [info ] [Thread-1 (]: 1 of 4 START sql view model public.stg_accounts ................................ [RUN]
+[0m13:54:44.917973 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_banking_db_public, now model.banking_etl_dbt.stg_accounts)
+[0m13:54:44.918713 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_accounts
+[0m13:54:44.927634 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_accounts"
+[0m13:54:44.929178 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_accounts
+[0m13:54:44.972139 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking_etl_dbt.stg_accounts"
+[0m13:54:44.973459 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_accounts"
+[0m13:54:44.973958 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_accounts"} */
+
+  create view "banking_db"."public"."stg_accounts__dbt_tmp"
+    
+    
+  as (
+    -- Este model prepara a tabela de contas
+
+select
+    account_id,         -- ID da conta
+    client_id,          -- Cliente relacionado
+    account_type,       -- Tipo da conta
+    opened_date,        -- Data de abertura
+    balance             -- Saldo atual
+from accounts
+  );
+[0m13:54:44.974442 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:45.381679 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.407 seconds
+[0m13:54:45.389713 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_accounts"
+[0m13:54:45.390198 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_accounts"} */
+alter table "banking_db"."public"."stg_accounts__dbt_tmp" rename to "stg_accounts"
+[0m13:54:45.392437 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:54:45.408143 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: COMMIT
+[0m13:54:45.408704 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_accounts"
+[0m13:54:45.409185 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: COMMIT
+[0m13:54:45.410279 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m13:54:45.417183 [debug] [Thread-1 (]: Applying DROP to: "banking_db"."public"."stg_accounts__dbt_backup"
+[0m13:54:45.423261 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_accounts"
+[0m13:54:45.423756 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_accounts"} */
+drop view if exists "banking_db"."public"."stg_accounts__dbt_backup" cascade
+[0m13:54:45.425117 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m13:54:45.427829 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_accounts: Close
+[0m13:54:45.430002 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1114cca40>]}
+[0m13:54:45.430940 [info ] [Thread-1 (]: 1 of 4 OK created sql view model public.stg_accounts ........................... [[32mCREATE VIEW[0m in 0.51s]
+[0m13:54:45.431807 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_accounts
+[0m13:54:45.432410 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_clients
+[0m13:54:45.433110 [info ] [Thread-1 (]: 2 of 4 START sql view model public.stg_clients ................................. [RUN]
+[0m13:54:45.433759 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_accounts, now model.banking_etl_dbt.stg_clients)
+[0m13:54:45.434223 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_clients
+[0m13:54:45.436355 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.437181 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_clients
+[0m13:54:45.441829 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.443949 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.444806 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_clients"} */
+
+  create view "banking_db"."public"."stg_clients__dbt_tmp"
+    
+    
+  as (
+    -- Este model prepara a tabela de clientes
+-- A função ref() aponta para uma tabela já existente no banco
+
+select
+    client_id,      -- ID do cliente
+    full_name,      -- Nome completo
+    city,           -- Cidade
+    state           -- Estado
+from clients
+  );
+[0m13:54:45.445363 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:45.564810 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.119 seconds
+[0m13:54:45.570438 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.571130 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_clients"} */
+alter table "banking_db"."public"."stg_clients__dbt_tmp" rename to "stg_clients"
+[0m13:54:45.572196 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m13:54:45.574500 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: COMMIT
+[0m13:54:45.575204 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.575776 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: COMMIT
+[0m13:54:45.576893 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m13:54:45.580014 [debug] [Thread-1 (]: Applying DROP to: "banking_db"."public"."stg_clients__dbt_backup"
+[0m13:54:45.581076 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_clients"
+[0m13:54:45.581610 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_clients"} */
+drop view if exists "banking_db"."public"."stg_clients__dbt_backup" cascade
+[0m13:54:45.582454 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m13:54:45.584530 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_clients: Close
+[0m13:54:45.585481 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11550f3b0>]}
+[0m13:54:45.586446 [info ] [Thread-1 (]: 2 of 4 OK created sql view model public.stg_clients ............................ [[32mCREATE VIEW[0m in 0.15s]
+[0m13:54:45.587334 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_clients
+[0m13:54:45.587952 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_transactions
+[0m13:54:45.588722 [info ] [Thread-1 (]: 3 of 4 START sql view model public.stg_transactions ............................ [RUN]
+[0m13:54:45.589395 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_clients, now model.banking_etl_dbt.stg_transactions)
+[0m13:54:45.589916 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_transactions
+[0m13:54:45.591918 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.592931 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_transactions
+[0m13:54:45.597620 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.598826 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.599562 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_transactions"} */
+
+  create view "banking_db"."public"."stg_transactions__dbt_tmp"
+    
+    
+  as (
+    -- Este model prepara a tabela de transações
+
+select
+    transaction_id,     -- ID da transação
+    account_id,         -- Conta relacionada
+    transaction_date,   -- Data da transação
+    transaction_type,   -- Tipo da transação
+    amount              -- Valor
+from transactions
+  );
+[0m13:54:45.600020 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:45.627620 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.027 seconds
+[0m13:54:45.632245 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.632842 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_transactions"} */
+alter table "banking_db"."public"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m13:54:45.633982 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:54:45.636008 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: COMMIT
+[0m13:54:45.636602 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.637139 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: COMMIT
+[0m13:54:45.638184 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m13:54:45.642913 [debug] [Thread-1 (]: Applying DROP to: "banking_db"."public"."stg_transactions__dbt_backup"
+[0m13:54:45.643830 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.stg_transactions"
+[0m13:54:45.644308 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.stg_transactions"} */
+drop view if exists "banking_db"."public"."stg_transactions__dbt_backup" cascade
+[0m13:54:45.645170 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m13:54:45.646674 [debug] [Thread-1 (]: On model.banking_etl_dbt.stg_transactions: Close
+[0m13:54:45.647338 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115530c50>]}
+[0m13:54:45.648124 [info ] [Thread-1 (]: 3 of 4 OK created sql view model public.stg_transactions ....................... [[32mCREATE VIEW[0m in 0.06s]
+[0m13:54:45.648886 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_transactions
+[0m13:54:45.650137 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.mart_client_transactions
+[0m13:54:45.650896 [info ] [Thread-1 (]: 4 of 4 START sql table model public.mart_client_transactions ................... [RUN]
+[0m13:54:45.651628 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_transactions, now model.banking_etl_dbt.mart_client_transactions)
+[0m13:54:45.652097 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.mart_client_transactions
+[0m13:54:45.656132 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.657191 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.mart_client_transactions
+[0m13:54:45.687957 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.689096 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.689625 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.mart_client_transactions"} */
+
+  
+    
+
+  create  table "banking_db"."public"."mart_client_transactions__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- Este model cria uma tabela analítica final
+-- Ele resume as transações por cliente
+
+select
+    c.client_id,                               -- ID do cliente
+    c.full_name,                               -- Nome do cliente
+    count(t.transaction_id) as total_transacoes,   -- Quantidade total de transações
+    round(sum(t.amount)::numeric, 2) as total_transacionado,  -- Soma dos valores
+    round(avg(t.amount)::numeric, 2) as media_transacao       -- Média das transações
+from "banking_db"."public"."stg_clients" c
+join "banking_db"."public"."stg_accounts" a
+    on c.client_id = a.client_id
+join "banking_db"."public"."stg_transactions" t
+    on a.account_id = t.account_id
+group by
+    c.client_id,
+    c.full_name
+order by total_transacionado desc
+  );
+  
+[0m13:54:45.690138 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:45.754872 [debug] [Thread-1 (]: SQL status: SELECT 100 in 0.065 seconds
+[0m13:54:45.763968 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.764503 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.mart_client_transactions"} */
+alter table "banking_db"."public"."mart_client_transactions__dbt_tmp" rename to "mart_client_transactions"
+[0m13:54:45.765658 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:54:45.767429 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: COMMIT
+[0m13:54:45.768119 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.768617 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: COMMIT
+[0m13:54:45.769538 [debug] [Thread-1 (]: SQL status: COMMIT in 0.000 seconds
+[0m13:54:45.772917 [debug] [Thread-1 (]: Applying DROP to: "banking_db"."public"."mart_client_transactions__dbt_backup"
+[0m13:54:45.778196 [debug] [Thread-1 (]: Using postgres connection "model.banking_etl_dbt.mart_client_transactions"
+[0m13:54:45.778772 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "model.banking_etl_dbt.mart_client_transactions"} */
+drop table if exists "banking_db"."public"."mart_client_transactions__dbt_backup" cascade
+[0m13:54:45.779668 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m13:54:45.782110 [debug] [Thread-1 (]: On model.banking_etl_dbt.mart_client_transactions: Close
+[0m13:54:45.783135 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd8d33377-4b69-4035-b845-8d99c1351aa5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115532db0>]}
+[0m13:54:45.784364 [info ] [Thread-1 (]: 4 of 4 OK created sql table model public.mart_client_transactions .............. [[32mSELECT 100[0m in 0.13s]
+[0m13:54:45.785744 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.mart_client_transactions
+[0m13:54:45.787179 [debug] [MainThread]: On master: COMMIT
+[0m13:54:45.787821 [debug] [MainThread]: Using postgres connection "master"
+[0m13:54:45.788334 [debug] [MainThread]: On master: COMMIT
+[0m13:54:45.788748 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:54:45.811519 [debug] [MainThread]: SQL status: COMMIT in 0.023 seconds
+[0m13:54:45.812200 [debug] [MainThread]: On master: Close
+[0m13:54:45.812844 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:54:45.813260 [debug] [MainThread]: Connection 'model.banking_etl_dbt.mart_client_transactions' was properly closed.
+[0m13:54:45.814070 [info ] [MainThread]: 
+[0m13:54:45.814804 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 1.15 seconds (1.15s).
+[0m13:54:45.816575 [debug] [MainThread]: Command end result
+[0m13:54:45.844784 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m13:54:45.846713 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m13:54:45.854203 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/run_results.json
+[0m13:54:45.854712 [info ] [MainThread]: 
+[0m13:54:45.855321 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:54:45.855821 [info ] [MainThread]: 
+[0m13:54:45.856360 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m13:54:45.858453 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.1642392, "process_in_blocks": "0", "process_kernel_time": 0.593088, "process_mem_max_rss": "126599168", "process_out_blocks": "0", "process_user_time": 3.942142}
+[0m13:54:45.859277 [debug] [MainThread]: Command `dbt run` succeeded at 13:54:45.859079 after 3.17 seconds
+[0m13:54:45.859831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114fda0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11414dd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11414da30>]}
+[0m13:54:45.860296 [debug] [MainThread]: Flushing usage events
+[0m13:54:46.142609 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:58:18.101683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9bd0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104e9d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104e9910>]}
+
+
+============================== 13:58:18.111969 | baa1bf64-2b58-4cb0-9cc8-bb0050d90031 ==============================
+[0m13:58:18.111969 [info ] [MainThread]: Running with dbt=1.11.7
+[0m13:58:18.112908 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/logs', 'no_print': 'None', 'partial_parse': 'True', 'write_json': 'True', 'quiet': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'empty': 'None', 'profiles_dir': '/Users/zeneto/.dbt', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'invocation_command': 'dbt test', 'printer_width': '80', 'introspect': 'True', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'static_parser': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True'}
+[0m13:58:18.347401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de54d40>]}
+[0m13:58:18.428448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1105c1550>]}
+[0m13:58:18.431931 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m13:58:18.570357 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m13:58:18.707349 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m13:58:18.708121 [debug] [MainThread]: Partial parsing: added file: banking_etl_dbt://models/schema.yml
+[0m13:58:19.012348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11157f260>]}
+[0m13:58:19.098481 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m13:58:19.101669 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m13:58:19.143070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115ed880>]}
+[0m13:58:19.143725 [info ] [MainThread]: Found 4 models, 6 data tests, 464 macros
+[0m13:58:19.144278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11171a810>]}
+[0m13:58:19.146807 [info ] [MainThread]: 
+[0m13:58:19.147360 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:58:19.147815 [info ] [MainThread]: 
+[0m13:58:19.148532 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:58:19.153758 [debug] [ThreadPool]: Acquiring new postgres connection 'list_banking_db_public'
+[0m13:58:19.216590 [debug] [ThreadPool]: Using postgres connection "list_banking_db_public"
+[0m13:58:19.217149 [debug] [ThreadPool]: On list_banking_db_public: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "list_banking_db_public"} */
+select
+      'banking_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:58:19.217577 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:58:19.335442 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.118 seconds
+[0m13:58:19.338964 [debug] [ThreadPool]: On list_banking_db_public: ROLLBACK
+[0m13:58:19.339746 [debug] [ThreadPool]: On list_banking_db_public: Close
+[0m13:58:19.347707 [debug] [MainThread]: Using postgres connection "master"
+[0m13:58:19.348331 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m13:58:19.348839 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:58:19.368042 [debug] [MainThread]: SQL status: SELECT 3 in 0.019 seconds
+[0m13:58:19.370902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'baa1bf64-2b58-4cb0-9cc8-bb0050d90031', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111709280>]}
+[0m13:58:19.371564 [debug] [MainThread]: On master: ROLLBACK
+[0m13:58:19.372322 [debug] [MainThread]: On master: COMMIT
+[0m13:58:19.372867 [debug] [MainThread]: Using postgres connection "master"
+[0m13:58:19.373354 [debug] [MainThread]: On master: COMMIT
+[0m13:58:19.374116 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:58:19.374630 [debug] [MainThread]: On master: Close
+[0m13:58:19.377801 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m13:58:19.378489 [info ] [Thread-1 (]: 1 of 6 START test not_null_stg_accounts_account_id ............................. [RUN]
+[0m13:58:19.379121 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_banking_db_public, now test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108)
+[0m13:58:19.379615 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m13:58:19.400042 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108"
+[0m13:58:19.401186 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m13:58:19.501167 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108"
+[0m13:58:19.502298 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108"
+[0m13:58:19.502827 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select account_id
+from "banking_db"."public"."stg_accounts"
+where account_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.503274 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.521087 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.018 seconds
+[0m13:58:19.526112 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108: ROLLBACK
+[0m13:58:19.526791 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108: Close
+[0m13:58:19.527550 [info ] [Thread-1 (]: 1 of 6 PASS not_null_stg_accounts_account_id ................................... [[32mPASS[0m in 0.15s]
+[0m13:58:19.528317 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m13:58:19.528938 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m13:58:19.529524 [info ] [Thread-1 (]: 2 of 6 START test not_null_stg_clients_client_id ............................... [RUN]
+[0m13:58:19.530154 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108, now test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505)
+[0m13:58:19.530612 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m13:58:19.535441 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505"
+[0m13:58:19.536464 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m13:58:19.539646 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505"
+[0m13:58:19.541488 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505"
+[0m13:58:19.542297 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select client_id
+from "banking_db"."public"."stg_clients"
+where client_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.542779 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.561836 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.019 seconds
+[0m13:58:19.563828 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505: ROLLBACK
+[0m13:58:19.564740 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505: Close
+[0m13:58:19.565669 [info ] [Thread-1 (]: 2 of 6 PASS not_null_stg_clients_client_id ..................................... [[32mPASS[0m in 0.04s]
+[0m13:58:19.566586 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m13:58:19.567660 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m13:58:19.568529 [info ] [Thread-1 (]: 3 of 6 START test not_null_stg_transactions_transaction_id ..................... [RUN]
+[0m13:58:19.569284 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505, now test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m13:58:19.569789 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m13:58:19.574897 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m13:58:19.575767 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m13:58:19.579500 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m13:58:19.580384 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m13:58:19.581683 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_id
+from "banking_db"."public"."stg_transactions"
+where transaction_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.582457 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.599396 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m13:58:19.601326 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: ROLLBACK
+[0m13:58:19.601973 [debug] [Thread-1 (]: On test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4: Close
+[0m13:58:19.602829 [info ] [Thread-1 (]: 3 of 6 PASS not_null_stg_transactions_transaction_id ........................... [[32mPASS[0m in 0.03s]
+[0m13:58:19.603850 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m13:58:19.604670 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m13:58:19.605381 [info ] [Thread-1 (]: 4 of 6 START test unique_stg_accounts_account_id ............................... [RUN]
+[0m13:58:19.606003 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4, now test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79)
+[0m13:58:19.606510 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m13:58:19.614122 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79"
+[0m13:58:19.615830 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m13:58:19.619527 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79"
+[0m13:58:19.620511 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79"
+[0m13:58:19.621189 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    account_id as unique_field,
+    count(*) as n_records
+
+from "banking_db"."public"."stg_accounts"
+where account_id is not null
+group by account_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.621711 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.640018 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.018 seconds
+[0m13:58:19.642042 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79: ROLLBACK
+[0m13:58:19.642746 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79: Close
+[0m13:58:19.643529 [info ] [Thread-1 (]: 4 of 6 PASS unique_stg_accounts_account_id ..................................... [[32mPASS[0m in 0.04s]
+[0m13:58:19.644320 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m13:58:19.644873 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m13:58:19.645540 [info ] [Thread-1 (]: 5 of 6 START test unique_stg_clients_client_id ................................. [RUN]
+[0m13:58:19.646359 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79, now test.banking_etl_dbt.unique_stg_clients_client_id.892841d178)
+[0m13:58:19.647014 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m13:58:19.651878 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_clients_client_id.892841d178"
+[0m13:58:19.652966 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m13:58:19.656117 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.unique_stg_clients_client_id.892841d178"
+[0m13:58:19.657096 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.unique_stg_clients_client_id.892841d178"
+[0m13:58:19.657662 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_clients_client_id.892841d178: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.unique_stg_clients_client_id.892841d178"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    client_id as unique_field,
+    count(*) as n_records
+
+from "banking_db"."public"."stg_clients"
+where client_id is not null
+group by client_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.658135 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.676599 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.018 seconds
+[0m13:58:19.678581 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_clients_client_id.892841d178: ROLLBACK
+[0m13:58:19.679222 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_clients_client_id.892841d178: Close
+[0m13:58:19.680039 [info ] [Thread-1 (]: 5 of 6 PASS unique_stg_clients_client_id ....................................... [[32mPASS[0m in 0.03s]
+[0m13:58:19.680901 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m13:58:19.681904 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m13:58:19.682804 [info ] [Thread-1 (]: 6 of 6 START test unique_stg_transactions_transaction_id ....................... [RUN]
+[0m13:58:19.683596 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.unique_stg_clients_client_id.892841d178, now test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m13:58:19.684111 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m13:58:19.689320 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m13:58:19.690306 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m13:58:19.695384 [debug] [Thread-1 (]: Writing runtime sql for node "test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m13:58:19.696257 [debug] [Thread-1 (]: Using postgres connection "test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m13:58:19.696765 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "node_id": "test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    transaction_id as unique_field,
+    count(*) as n_records
+
+from "banking_db"."public"."stg_transactions"
+where transaction_id is not null
+group by transaction_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:58:19.697260 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:58:19.716291 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.019 seconds
+[0m13:58:19.718209 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396: ROLLBACK
+[0m13:58:19.718876 [debug] [Thread-1 (]: On test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396: Close
+[0m13:58:19.719702 [info ] [Thread-1 (]: 6 of 6 PASS unique_stg_transactions_transaction_id ............................. [[32mPASS[0m in 0.04s]
+[0m13:58:19.720571 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m13:58:19.722190 [debug] [MainThread]: On master: COMMIT
+[0m13:58:19.722641 [debug] [MainThread]: Using postgres connection "master"
+[0m13:58:19.723019 [debug] [MainThread]: On master: COMMIT
+[0m13:58:19.723387 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:58:19.738270 [debug] [MainThread]: SQL status: COMMIT in 0.015 seconds
+[0m13:58:19.738937 [debug] [MainThread]: On master: Close
+[0m13:58:19.739656 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:58:19.740091 [debug] [MainThread]: Connection 'test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396' was properly closed.
+[0m13:58:19.740543 [info ] [MainThread]: 
+[0m13:58:19.741018 [info ] [MainThread]: Finished running 6 data tests in 0 hours 0 minutes and 0.59 seconds (0.59s).
+[0m13:58:19.742811 [debug] [MainThread]: Command end result
+[0m13:58:19.769534 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m13:58:19.772203 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m13:58:19.780855 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/run_results.json
+[0m13:58:19.781282 [info ] [MainThread]: 
+[0m13:58:19.781817 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:58:19.782288 [info ] [MainThread]: 
+[0m13:58:19.782800 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m13:58:19.785210 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.7811065, "process_in_blocks": "0", "process_kernel_time": 0.47647, "process_mem_max_rss": "129748992", "process_out_blocks": "0", "process_user_time": 3.051113}
+[0m13:58:19.786017 [debug] [MainThread]: Command `dbt test` succeeded at 13:58:19.785868 after 1.78 seconds
+[0m13:58:19.786617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b589b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b59550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b59880>]}
+[0m13:58:19.787357 [debug] [MainThread]: Flushing usage events
+[0m13:58:20.081770 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:05:31.385601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1116640e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e2dee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e2da90>]}
+
+
+============================== 14:05:31.393104 | b99afdd3-4bd9-4b14-9609-1512d97eef88 ==============================
+[0m14:05:31.393104 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:05:31.393943 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'no_print': 'None', 'version_check': 'True', 'empty': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/zeneto/.dbt', 'log_format': 'default', 'static_parser': 'True', 'partial_parse': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'log_path': '/Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/logs', 'quiet': 'False', 'write_json': 'True', 'printer_width': '80', 'warn_error': 'None', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'indirect_selection': 'eager'}
+[0m14:05:31.609277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e0b440>]}
+[0m14:05:31.688737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111072630>]}
+[0m14:05:31.691926 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m14:05:31.833556 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m14:05:32.081665 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:05:32.082317 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m14:05:32.082812 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:05:32.127266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111ed6270>]}
+[0m14:05:32.157034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112da24e0>]}
+[0m14:05:32.157661 [info ] [MainThread]: Found 4 models, 6 data tests, 464 macros
+[0m14:05:32.158204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1125e2180>]}
+[0m14:05:32.160705 [info ] [MainThread]: 
+[0m14:05:32.161255 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:05:32.161746 [info ] [MainThread]: 
+[0m14:05:32.162456 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:05:32.167650 [debug] [ThreadPool]: Acquiring new postgres connection 'list_banking_db_public'
+[0m14:05:32.237185 [debug] [ThreadPool]: Using postgres connection "list_banking_db_public"
+[0m14:05:32.237871 [debug] [ThreadPool]: On list_banking_db_public: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "list_banking_db_public"} */
+select
+      'banking_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'banking_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m14:05:32.238510 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:05:32.338433 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.100 seconds
+[0m14:05:32.340972 [debug] [ThreadPool]: On list_banking_db_public: ROLLBACK
+[0m14:05:32.341808 [debug] [ThreadPool]: On list_banking_db_public: Close
+[0m14:05:32.349521 [debug] [MainThread]: Using postgres connection "master"
+[0m14:05:32.350141 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:05:32.350669 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:05:32.372937 [debug] [MainThread]: SQL status: SELECT 3 in 0.022 seconds
+[0m14:05:32.375999 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b99afdd3-4bd9-4b14-9609-1512d97eef88', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1124c5700>]}
+[0m14:05:32.376649 [debug] [MainThread]: On master: ROLLBACK
+[0m14:05:32.377411 [debug] [MainThread]: On master: Close
+[0m14:05:32.380530 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_accounts
+[0m14:05:32.381207 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_banking_db_public, now model.banking_etl_dbt.stg_accounts)
+[0m14:05:32.381729 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_accounts
+[0m14:05:32.389382 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_accounts"
+[0m14:05:32.391005 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_accounts
+[0m14:05:32.392914 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_accounts
+[0m14:05:32.393990 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_clients
+[0m14:05:32.394937 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_accounts, now model.banking_etl_dbt.stg_clients)
+[0m14:05:32.395729 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_clients
+[0m14:05:32.398363 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_clients"
+[0m14:05:32.400009 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_clients
+[0m14:05:32.401445 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_clients
+[0m14:05:32.402209 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.stg_transactions
+[0m14:05:32.403356 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_clients, now model.banking_etl_dbt.stg_transactions)
+[0m14:05:32.404009 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.stg_transactions
+[0m14:05:32.406441 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.stg_transactions"
+[0m14:05:32.407397 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.stg_transactions
+[0m14:05:32.408331 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.stg_transactions
+[0m14:05:32.408908 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m14:05:32.409533 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.stg_transactions, now test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108)
+[0m14:05:32.410192 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m14:05:32.423388 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108"
+[0m14:05:32.424339 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m14:05:32.425163 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108
+[0m14:05:32.425651 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m14:05:32.426209 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_accounts_account_id.182dfbc108, now test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79)
+[0m14:05:32.426696 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m14:05:32.435086 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79"
+[0m14:05:32.436095 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m14:05:32.437104 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79
+[0m14:05:32.437607 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m14:05:32.438170 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.unique_stg_accounts_account_id.cdf6252c79, now test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505)
+[0m14:05:32.438629 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m14:05:32.442712 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505"
+[0m14:05:32.443509 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m14:05:32.444293 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505
+[0m14:05:32.444788 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m14:05:32.445363 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_clients_client_id.025cfd4505, now test.banking_etl_dbt.unique_stg_clients_client_id.892841d178)
+[0m14:05:32.445814 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m14:05:32.449801 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_clients_client_id.892841d178"
+[0m14:05:32.450633 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m14:05:32.451417 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_clients_client_id.892841d178
+[0m14:05:32.452019 [debug] [Thread-1 (]: Began running node model.banking_etl_dbt.mart_client_transactions
+[0m14:05:32.452591 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.unique_stg_clients_client_id.892841d178, now model.banking_etl_dbt.mart_client_transactions)
+[0m14:05:32.453065 [debug] [Thread-1 (]: Began compiling node model.banking_etl_dbt.mart_client_transactions
+[0m14:05:32.456353 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking_etl_dbt.mart_client_transactions"
+[0m14:05:32.457192 [debug] [Thread-1 (]: Began executing node model.banking_etl_dbt.mart_client_transactions
+[0m14:05:32.457996 [debug] [Thread-1 (]: Finished running node model.banking_etl_dbt.mart_client_transactions
+[0m14:05:32.458483 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m14:05:32.459010 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking_etl_dbt.mart_client_transactions, now test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m14:05:32.459710 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m14:05:32.463679 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m14:05:32.464492 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m14:05:32.465307 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m14:05:32.465797 [debug] [Thread-1 (]: Began running node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m14:05:32.466358 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.banking_etl_dbt.not_null_stg_transactions_transaction_id.1d00a8e2e4, now test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m14:05:32.466814 [debug] [Thread-1 (]: Began compiling node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m14:05:32.470663 [debug] [Thread-1 (]: Writing injected SQL for node "test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m14:05:32.471434 [debug] [Thread-1 (]: Began executing node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m14:05:32.472204 [debug] [Thread-1 (]: Finished running node test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396
+[0m14:05:32.473556 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:05:32.473935 [debug] [MainThread]: Connection 'test.banking_etl_dbt.unique_stg_transactions_transaction_id.ee9a78a396' was properly closed.
+[0m14:05:32.476250 [debug] [MainThread]: Command end result
+[0m14:05:32.556665 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m14:05:32.559534 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m14:05:32.568004 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/run_results.json
+[0m14:05:32.574326 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m14:05:32.575058 [info ] [MainThread]: Building catalog
+[0m14:05:32.586247 [debug] [ThreadPool]: Acquiring new postgres connection 'banking_db.information_schema'
+[0m14:05:32.595360 [debug] [ThreadPool]: Using postgres connection "banking_db.information_schema"
+[0m14:05:32.595985 [debug] [ThreadPool]: On banking_db.information_schema: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "banking_etl_dbt", "target_name": "dev", "connection_name": "banking_db.information_schema"} */
+
+    
+    
+
+    select
+        'banking_db' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('mart_client_transactions')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('stg_accounts')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('stg_transactions')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('stg_clients')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m14:05:32.596479 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:05:32.621302 [debug] [ThreadPool]: SQL status: SELECT 19 in 0.025 seconds
+[0m14:05:32.625269 [debug] [ThreadPool]: On banking_db.information_schema: ROLLBACK
+[0m14:05:32.626095 [debug] [ThreadPool]: On banking_db.information_schema: Close
+[0m14:05:32.639097 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/catalog.json
+[0m14:05:32.662560 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/manifest.json
+[0m14:05:32.664734 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/semantic_manifest.json
+[0m14:05:32.665144 [info ] [MainThread]: Catalog written to /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/target/catalog.json
+[0m14:05:32.667696 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.3792329, "process_in_blocks": "0", "process_kernel_time": 0.368277, "process_mem_max_rss": "125861888", "process_out_blocks": "0", "process_user_time": 2.562283}
+[0m14:05:32.668555 [debug] [MainThread]: Command `dbt docs generate` succeeded at 14:05:32.668395 after 1.38 seconds
+[0m14:05:32.669081 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m14:05:32.669542 [debug] [MainThread]: Connection 'banking_db.information_schema' was properly closed.
+[0m14:05:32.670063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111965b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113041820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e2d8b0>]}
+[0m14:05:32.670562 [debug] [MainThread]: Flushing usage events
+[0m14:05:33.002844 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:05:57.330680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a57620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b58d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109149af0>]}
+
+
+============================== 14:05:57.336970 | c30e0f7b-55ac-4613-a9f0-aa743cab415e ==============================
+[0m14:05:57.336970 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:05:57.337807 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'log_format': 'default', 'target_path': 'None', 'quiet': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'debug': 'False', 'write_json': 'True', 'cache_selected_only': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt docs serve', 'log_path': '/Users/zeneto/Desktop/banking-etl-pipeline/dbt_project/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/zeneto/.dbt', 'warn_error': 'None', 'no_print': 'None', 'log_cache_events': 'False', 'use_colors': 'True', 'printer_width': '80'}
+[0m14:05:57.558191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c30e0f7b-55ac-4613-a9f0-aa743cab415e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109700770>]}
+[0m14:05:57.639145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c30e0f7b-55ac-4613-a9f0-aa743cab415e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109149910>]}
+[0m14:10:00.472569 [error] [MainThread]: Encountered an error:
+
+[0m14:10:00.481635 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 307, in docs_serve
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/zeneto/Desktop/banking-etl-pipeline/venv/lib/python3.12/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m14:10:00.485031 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 243.2483, "process_in_blocks": "0", "process_kernel_time": 0.284865, "process_mem_max_rss": "110968832", "process_out_blocks": "0", "process_user_time": 2.023189}
+[0m14:10:00.486016 [debug] [MainThread]: Command `dbt docs serve` failed at 14:10:00.485838 after 243.25 seconds
+[0m14:10:00.486813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090d7050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10978c7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097024b0>]}
+[0m14:10:00.487409 [debug] [MainThread]: Flushing usage events
+[0m14:10:00.860898 [debug] [MainThread]: An error was encountered while trying to flush usage events

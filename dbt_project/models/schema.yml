@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_clients
+    description: "Camada de staging para clientes"
+    columns:
+      - name: client_id
+        description: "ID único do cliente"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_accounts
+    description: "Camada de staging para contas"
+    columns:
+      - name: account_id
+        description: "ID único da conta"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_transactions
+    description: "Camada de staging para transações"
+    columns:
+      - name: transaction_id
+        description: "ID único da transação"
+        tests:
+          - not_null
+          - unique

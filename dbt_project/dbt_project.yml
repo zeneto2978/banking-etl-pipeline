@@ -1,0 +1,27 @@
+# Nome do projeto DBT
+name: 'banking_etl_dbt'
+
+# Versão do projeto
+version: '1.0.0'
+
+# Versão mínima do profile usada
+profile: 'banking_etl_dbt'
+
+# Caminhos que o DBT vai usar
+model-paths: ["models"]
+
+# Pasta onde ficam arquivos compilados
+target-path: "target"
+
+# Pasta a ser limpa pelo dbt clean
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuração padrão dos models
+models:
+  banking_etl_dbt:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
