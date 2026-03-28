@@ -1,0 +1,91 @@
+[0m14:14:39.908024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045c0560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c518b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c513a0>]}
+
+
+============================== 14:14:39.915694 | 7eadb865-e8bb-4d38-9ce7-1d6ffcc371fe ==============================
+[0m14:14:39.915694 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:14:39.916799 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'write_json': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_path': 'logs', 'invocation_command': 'dbt debug', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'partial_parse': 'True', 'empty': 'None', 'introspect': 'True', 'profiles_dir': '/Users/zeneto/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None'}
+[0m14:14:39.941710 [info ] [MainThread]: dbt version: 1.11.7
+[0m14:14:39.942301 [info ] [MainThread]: python version: 3.12.4
+[0m14:14:39.942781 [info ] [MainThread]: python path: /Users/zeneto/Desktop/banking-etl-pipeline/venv/bin/python3
+[0m14:14:39.943239 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m14:14:40.030271 [info ] [MainThread]: Using profiles dir at /Users/zeneto/.dbt
+[0m14:14:40.030869 [info ] [MainThread]: Using profiles.yml file at /Users/zeneto/.dbt/profiles.yml
+[0m14:14:40.031281 [info ] [MainThread]: Using dbt_project.yml file at /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project.yml
+[0m14:14:40.032314 [info ] [MainThread]: adapter type: postgres
+[0m14:14:40.032818 [info ] [MainThread]: adapter version: 1.10.0
+[0m14:14:40.033310 [info ] [MainThread]: Configuration:
+[0m14:14:40.033742 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:14:40.034157 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:14:40.034574 [info ] [MainThread]: Required dependencies:
+[0m14:14:40.035103 [debug] [MainThread]: Executing "git --help"
+[0m14:14:40.053229 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone             Clone a repository into a new directory\n   init              Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add               Add file contents to the index\n   mv                Move or rename a file, a directory, or a symlink\n   restore           Restore working tree files\n   rm                Remove files from the working tree and from the index\n   sparse-checkout   Initialize and modify the sparse-checkout\n\nexamine the history and state (see also: git help revisions)\n   bisect            Use binary search to find the commit that introduced a bug\n   diff              Show changes between commits, commit and working tree, etc\n   grep              Print lines matching a pattern\n   log               Show commit logs\n   show              Show various types of objects\n   status            Show the working tree status\n\ngrow, mark and tweak your common history\n   branch            List, create, or delete branches\n   commit            Record changes to the repository\n   merge             Join two or more development histories together\n   rebase            Reapply commits on top of another base tip\n   reset             Reset current HEAD to the specified state\n   switch            Switch branches\n   tag               Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch             Download objects and refs from another repository\n   pull              Fetch from and integrate with another repository or a local branch\n   push              Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:14:40.055135 [debug] [MainThread]: STDERR: "b''"
+[0m14:14:40.056066 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:14:40.056934 [info ] [MainThread]: Connection:
+[0m14:14:40.057666 [info ] [MainThread]:   host: localhost
+[0m14:14:40.058088 [info ] [MainThread]:   port: 5433
+[0m14:14:40.058483 [info ] [MainThread]:   user: postgres
+[0m14:14:40.058874 [info ] [MainThread]:   database: banking_db
+[0m14:14:40.059266 [info ] [MainThread]:   schema: public
+[0m14:14:40.059658 [info ] [MainThread]:   connect_timeout: 10
+[0m14:14:40.060052 [info ] [MainThread]:   role: None
+[0m14:14:40.060444 [info ] [MainThread]:   search_path: None
+[0m14:14:40.060840 [info ] [MainThread]:   keepalives_idle: 0
+[0m14:14:40.061229 [info ] [MainThread]:   sslmode: None
+[0m14:14:40.061630 [info ] [MainThread]:   sslcert: None
+[0m14:14:40.062142 [info ] [MainThread]:   sslkey: None
+[0m14:14:40.062586 [info ] [MainThread]:   sslrootcert: None
+[0m14:14:40.063014 [info ] [MainThread]:   application_name: dbt
+[0m14:14:40.063438 [info ] [MainThread]:   retries: 1
+[0m14:14:40.064368 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m14:14:40.187948 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m14:14:40.242817 [debug] [MainThread]: Using postgres connection "debug"
+[0m14:14:40.243400 [debug] [MainThread]: On debug: select 1 as id
+[0m14:14:40.243894 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:14:40.351441 [debug] [MainThread]: SQL status: SELECT 1 in 0.107 seconds
+[0m14:14:40.353191 [debug] [MainThread]: On debug: Close
+[0m14:14:40.353795 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:14:40.354394 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:14:40.354907 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/zeneto/Desktop/banking-etl-pipeline/dbt_project.yml> not found
+
+[0m14:14:40.358412 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.55575436, "process_in_blocks": "0", "process_kernel_time": 0.322151, "process_mem_max_rss": "114180096", "process_out_blocks": "0", "process_user_time": 1.859116}
+[0m14:14:40.359402 [debug] [MainThread]: Command `dbt debug` failed at 14:14:40.359191 after 0.56 seconds
+[0m14:14:40.360028 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:14:40.360606 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a3bec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c51850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c517f0>]}
+[0m14:14:40.361279 [debug] [MainThread]: Flushing usage events
+[0m14:14:40.765831 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:14:51.355664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f00d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107595d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075957f0>]}
+
+
+============================== 14:14:51.362079 | a83cafb9-3fa8-4ace-9efb-84da049e2a1b ==============================
+[0m14:14:51.362079 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:14:51.362983 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'log_cache_events': 'False', 'printer_width': '80', 'version_check': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'introspect': 'True', 'fail_fast': 'False', 'profiles_dir': '/Users/zeneto/.dbt', 'partial_parse': 'True', 'warn_error': 'None', 'empty': 'False', 'target_path': 'None', 'no_print': 'None', 'log_path': 'logs', 'invocation_command': 'dbt run', 'debug': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m14:14:51.363770 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:14:51.365104 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.09706956, "process_in_blocks": "0", "process_kernel_time": 0.221612, "process_mem_max_rss": "101179392", "process_out_blocks": "0", "process_user_time": 1.724888}
+[0m14:14:51.365768 [debug] [MainThread]: Command `dbt run` failed at 14:14:51.365628 after 0.10 seconds
+[0m14:14:51.366241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074520c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106da84a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10728dfa0>]}
+[0m14:14:51.366698 [debug] [MainThread]: Flushing usage events
+[0m14:14:51.526712 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:14:59.591202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107aec1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10837df40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10837da00>]}
+
+
+============================== 14:14:59.597340 | 81d1d209-f5a5-43fb-ac47-307feee59428 ==============================
+[0m14:14:59.597340 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:14:59.598178 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'no_print': 'None', 'empty': 'None', 'quiet': 'False', 'profiles_dir': '/Users/zeneto/.dbt', 'invocation_command': 'dbt test', 'use_experimental_parser': 'False', 'target_path': 'None', 'partial_parse': 'True', 'static_parser': 'True', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'log_path': 'logs', 'printer_width': '80', 'cache_selected_only': 'False'}
+[0m14:14:59.598906 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/zeneto/Desktop/banking-etl-pipeline/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m14:14:59.600303 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.09606742, "process_in_blocks": "0", "process_kernel_time": 0.218163, "process_mem_max_rss": "101556224", "process_out_blocks": "0", "process_user_time": 1.705101}
+[0m14:14:59.600993 [debug] [MainThread]: Command `dbt test` failed at 14:14:59.600855 after 0.10 seconds
+[0m14:14:59.601517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b99f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cef3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1083120f0>]}
+[0m14:14:59.602026 [debug] [MainThread]: Flushing usage events
+[0m14:14:59.763643 [debug] [MainThread]: An error was encountered while trying to flush usage events
